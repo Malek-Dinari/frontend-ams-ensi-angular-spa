@@ -1,30 +1,32 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+
+
+import { FormsModule } from '@angular/forms'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { UpdateProviderComponent } from './update-provider/update-provider.component';
-import { ListProviderComponent } from './list-provider/list-provider.component';
 import { AddProviderComponent } from './add-provider/add-provider.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ListProviderComponent } from './list-provider/list-provider.component';
+import { UpdateProviderComponent } from './update-provider/update-provider.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    UpdateProviderComponent,
+    AddProviderComponent,
     ListProviderComponent,
-    AddProviderComponent
+    UpdateProviderComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule ,
     AppRoutingModule,
-    NgbModule
+    HttpClientModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
